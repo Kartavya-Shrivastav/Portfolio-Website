@@ -85,7 +85,7 @@ section {
   }
 
   .hero-text {
-    @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
+    @apply flex flex-col justify-center md:text-[48px] text-[26px] font-semibold relative z-10 pointer-events-none;
     img {
       @apply size-8 md:size-10 object-contain;
     }
@@ -100,6 +100,11 @@ section {
 
   .hero-3d-layout {
     @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0;
+    z-index: 0;
+  }
+
+  .hero-3d-layout {
+    overflow: hidden;
   }
 
   .navbar {
@@ -228,6 +233,11 @@ section {
         @apply size-5 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500;
       }
     }
+  }
+  
+  .card-box {
+    @apply bg-black-100 h-[120px] rounded-xl flex items-center justify-center 
+    cursor-pointer hover:scale-105 transition-all duration-300;
   }
 
   .card-border {
