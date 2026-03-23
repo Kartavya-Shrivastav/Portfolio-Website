@@ -6,6 +6,7 @@ import Button from "../components/Button";
 import { words } from "../constants";
 import HeroExperience from "../components/models/hero_models/HeroExperience";
 import { useRef, useState, useEffect } from "react";
+import LeetcodeCard from "../components/LeetcodeCard";
 
 const Hero = () => {
   useGSAP(() => {
@@ -33,7 +34,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={ref} id="hero" className="relative overflow-hidden">
+    <section ref={ref} id="hero" className="relative">
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="" />
       </div>
@@ -44,7 +45,7 @@ const Hero = () => {
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
-                Shaping
+                Turning 
                 <span className="slide">
                   <span className="wrapper">
                     {words.map((word, index) => (
@@ -63,13 +64,13 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
-              <h1>into Real Projects</h1>
-              <h1>that Deliver Results</h1>
+              <h1>into Real-World Products</h1>
+              <h1>that Actually Matter</h1>
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Adrian, a developer based in Croatia with a passion for
-              code.
+              Hi, I’m Kartavya — I build web apps and interactive experiences that  <br />
+              people actually enjoy using.
             </p>
 
             <Button
@@ -81,14 +82,13 @@ const Hero = () => {
         </header>
 
         {/* RIGHT: 3D Model or Visual */}
-        <figure>
-          <div className="hero-3d-layout">
+        <figure className="z-0">
+          <div className="hero-3d-layout pointer-events-none">
             {visible && <HeroExperience />}
           </div>
         </figure>
       </div>
 
-      <AnimatedCounter />
     </section>
   );
 };

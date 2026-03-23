@@ -19,17 +19,17 @@ const Particles = ({ count = 200 }) => {
           Math.random() * 10 + 5, // higher starting point
           (Math.random() - 0.5) * 10,
         ],
-        speed: 0.005 + Math.random() * 0.001,
+        speed: 0.01 + Math.random() * 0.001,
       });
     }
     return temp;
   }, [count]);
 
-  useFrame(() => {
+  useFrame((_, delta) => {
     const positions = mesh.current.geometry.attributes.position.array;
     for (let i = 0; i < count; i++) {
       let y = positions[i * 3 + 1];
-      y -= particles[i].speed;
+      y -= particles[i].speed * delta * 60;
       if (y < -2) y = Math.random() * 10 + 5;
       positions[i * 3 + 1] = y;
     }
