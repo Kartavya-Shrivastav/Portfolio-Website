@@ -1,8 +1,14 @@
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useThree } from "@react-three/fiber";
 
 const Particles = ({ count = 200 }) => {
   const mesh = useRef();
+  const { invalidate } = useThree();
+
+  useFrame(() => {
+    invalidate(); // only render when needed
+  });
 
   const particles = useMemo(() => {
     const temp = [];
@@ -28,6 +34,7 @@ const Particles = ({ count = 200 }) => {
       positions[i * 3 + 1] = y;
     }
     mesh.current.geometry.attributes.position.needsUpdate = true;
+    invalidate();
   });
 
   const positions = new Float32Array(count * 3);
