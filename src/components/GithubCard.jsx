@@ -55,13 +55,11 @@ const GithubCard = ({ active, setActive, clearActive, expanded }) => {
         onMouseLeave={handleLeave}
         className="card-box"
       >
-        <div className="bg-black-100 px-4 py-2 rounded-lg">
-          <img
-            src="/images/github.png"
-            alt="GitHub"
-            className="h-14 md:h-14 object-contain"
-          />
-        </div>
+        <img
+          src="/images/github.png"
+          alt="GitHub"
+          className="h-20 object-contain transform scale-200 mt-3"
+        />
       </div>
     );
   }
@@ -119,11 +117,11 @@ const GithubCard = ({ active, setActive, clearActive, expanded }) => {
 
         {/* 🔹 RIGHT SIDE (PLACEHOLDER FOR HEATMAP) */}
         <div className="flex-1 bg-black-100 p-3 rounded-lg flex items-center justify-center">
-          <div className="text-white-50 opacity-60 text-center">
-            GitHub Contribution Graph
-            <br />
-            (Add heatmap image later)
-          </div>
+          <img
+            src="/images/github-heatmap.png"
+            alt="Github Heatmap"
+            className="w-full rounded-lg opacity-90"
+          />
         </div>
 
       </div>

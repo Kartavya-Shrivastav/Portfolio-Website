@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const GeeksForGeeksCard = ({ active, setActive, clearActive, expanded }) => {
+const GeeksForGeeksCard = ({setActive, clearActive, expanded }) => {
   const [count, setCount] = useState(0);
 
   // 🔥 Replace with your actual stats
@@ -52,13 +52,11 @@ const GeeksForGeeksCard = ({ active, setActive, clearActive, expanded }) => {
         onMouseLeave={handleLeave}
         className="card-box"
       >
-        <div className="bg-black-100 px-4 py-2 rounded-lg">
-          <img
-            src="/images/gfg.png"
-            alt="GeeksForGeeks"
-            className="h-14 md:h-14 object-contain"
-          />
-        </div>
+        <img
+          src="/images/gfg.png"
+          alt="GeeksForGeeks"
+          className="h-20 object-contain transform scale-270 mt-3"
+        />
       </div>
     );
   }

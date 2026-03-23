@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-const CodeforcesCard = ({ active, setActive, clearActive, expanded }) => {
+const CodeforcesCard = ({ setActive, clearActive, expanded }) => {
   const [user, setUser] = useState(null);
   const [ratingData, setRatingData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -67,13 +67,11 @@ const CodeforcesCard = ({ active, setActive, clearActive, expanded }) => {
         onMouseLeave={handleLeave}
         className="card-box"
       >
-        <div className="bg-black-100 px-4 py-2 rounded-lg">
-          <img
-            src="/images/codeforces.png"
-            alt="Codeforces"
-            className="h-14 md:h-14 object-contain"
-          />
-        </div>
+        <img
+          src="/images/codeforces.png"
+          alt="Codeforces"
+          className="h-20 object-contain transform scale-250 mt-3"
+        />
       </div>
     );
   }
