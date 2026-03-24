@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AppShowcase = () => {
+const Project = () => {
   const sectionRef = useRef(null);
   const rydeRef = useRef(null);
   const libraryRef = useRef(null);
@@ -14,38 +14,61 @@ const AppShowcase = () => {
   useGSAP(() => {
     // Animation for the main section
     gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1.5 }
+        ".projects-heading",
+        { y: 40, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+            trigger: ".projects-heading",
+            start: "top bottom-=100",
+            },
+        }
     );
 
     // Animations for each app showcase
     const cards = [rydeRef.current, libraryRef.current, ycDirectoryRef.current];
 
     cards.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        {
-          y: 50,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          delay: 0.3 * (index + 1),
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom-=100",
-          },
-        }
-      );
-    });
+        if (!card) return;
+
+        gsap.fromTo(
+            card,
+            {
+            y: 50,
+            opacity: 0,
+            },
+            {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            delay: 0.3 * (index + 1),
+            scrollTrigger: {
+                trigger: card,
+                start: "top bottom-=100",
+            },
+            }
+        );
+        });
   }, []);
 
   return (
     <div id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full">
+
+        {/* 🔥 NEW HEADING */}
+        <div className="text-center mb-16 px-5 projects-heading">
+            <h1 className="text-4xl md:text-6xl font-bold">
+            My <span className="text-orange-400">Projects</span>
+            </h1>
+            <p className="text-white-50 mt-4 text-lg md:text-xl">
+            A selection of projects that showcase my skills in building
+            scalable, user-focused applications.
+            </p>
+        </div>
+
+
         <div className="showcaselayout">
           <div ref={rydeRef} className="first-project-wrapper">
             <div className="image-wrapper">
@@ -87,4 +110,4 @@ const AppShowcase = () => {
   );
 };
 
-export default AppShowcase;
+export default Project;

@@ -249,18 +249,13 @@ const socialImgs = [
   {
     name: "insta",
     imgPath: "/images/insta.png",
+    link: "https://www.instagram.com/iamkartavya/"
   },
-  {
-    name: "fb",
-    imgPath: "/images/fb.png",
-  },
-  {
-    name: "x",
-    imgPath: "/images/x.png",
-  },
+  
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+    link: "https://www.linkedin.com/in/kartavyashrivastav/"
   },
 ];
 
