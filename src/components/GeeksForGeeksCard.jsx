@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const GeeksForGeeksCard = ({setActive, clearActive, expanded }) => {
+const GeeksForGeeksCard = ({active, setActive, clearActive, expanded }) => {
   const [count, setCount] = useState(0);
 
   // 🔥 Replace with your actual stats
@@ -31,18 +31,18 @@ const GeeksForGeeksCard = ({setActive, clearActive, expanded }) => {
     return () => clearInterval(timer);
   }, []);
 
-    let timeout;
+  let timeout;
 
-    const handleEnter = () => {
-      clearTimeout(timeout);
-      setActive();
-    };
+  const handleEnter = () => {
+    clearTimeout(timeout);
+    setActive();
+  };
 
-    const handleLeave = () => {
-      timeout = setTimeout(() => {
-        clearActive();
-      }, 600); // delay
-    };
+  const handleLeave = () => {
+    timeout = setTimeout(() => {
+      clearActive();
+    }, 600); // delay
+  };
 
   // ✅ SMALL CARD
   if (!expanded) {
@@ -53,9 +53,9 @@ const GeeksForGeeksCard = ({setActive, clearActive, expanded }) => {
         className="card-box"
       >
         <img
-          src="/images/gfg.png"
+          src="/images/gfg2.png"
           alt="GeeksForGeeks"
-          className="h-20 object-contain transform scale-270 mt-3"
+          className="h-20 object-contain transform "
         />
       </div>
     );

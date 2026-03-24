@@ -50,11 +50,11 @@ const LeetcodeCard = () => {
       className="relative"
     >
       {/* 🔹 MAIN CARD */}
-      <div className="bg-black-100 w-[250px] h-[120px] rounded-xl flex items-center justify-center cursor-pointer hover:scale-105 transition-all duration-300">
+      <div className="card-box w-full h-[120px]">
         <img
             src="/images/leetcode.png"
             alt="LeetCode"
-            className="w-40 object-contain transition-all duration-300 group-hover:opacity-0"
+            className="w-40 object-contain transition-all duration-300 group-hover:opacity-0 scale-110"
         />
       </div>
 

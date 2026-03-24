@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-const CodeforcesCard = ({ setActive, clearActive, expanded }) => {
+const CodeforcesCard = ({ active, setActive, clearActive, expanded }) => {
   const [user, setUser] = useState(null);
   const [ratingData, setRatingData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -70,7 +70,7 @@ const CodeforcesCard = ({ setActive, clearActive, expanded }) => {
         <img
           src="/images/codeforces.png"
           alt="Codeforces"
-          className="h-20 object-contain transform scale-250 mt-3"
+          className="h-20 object-contain transform "
         />
       </div>
     );

@@ -16,7 +16,7 @@ const GithubCard = ({ active, setActive, clearActive, expanded }) => {
     ])
       .then(([userData, reposData]) => {
         setUser(userData);
-        setRepos(reposData);
+        setRepos(Array.isArray(reposData) ? reposData : []);
         setLoading(false);
       })
       .catch(err => console.log(err));
@@ -45,8 +45,9 @@ const GithubCard = ({ active, setActive, clearActive, expanded }) => {
   if (!user) return null;
 
   // ⭐ total stars (sum of all repos)
-  const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
-
+  const totalStars = Array.isArray(repos)
+  ? repos.reduce((acc, repo) => acc + repo.stargazers_count, 0)
+  : 0;
   // 🔹 SMALL CARD
   if (!expanded) {
     return (
@@ -56,9 +57,9 @@ const GithubCard = ({ active, setActive, clearActive, expanded }) => {
         className="card-box"
       >
         <img
-          src="/images/github.png"
+          src="/images/github2.png"
           alt="GitHub"
-          className="h-20 object-contain transform scale-200 mt-3"
+          className="h-18 object-contain transform "
         />
       </div>
     );
