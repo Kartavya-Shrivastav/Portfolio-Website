@@ -256,6 +256,16 @@ section {
     @apply border border-black-50 bg-black-100;
   }
 
+  .card-wrapper {
+    position: relative;
+  }
+
+  .expanded-card {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
   .marquee-item {
     @apply md:w-40 w-32;
   }
