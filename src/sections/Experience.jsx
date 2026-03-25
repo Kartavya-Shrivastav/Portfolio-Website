@@ -143,7 +143,7 @@ const Experience = () => {
               <img
                 src={card.logo}
                 alt="logo"
-                className="w-6 h-6 object-contain"
+                className="w-10 h-10 object-contain"
               />
             </div>
           </div>
