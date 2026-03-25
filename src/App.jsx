@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Testimonials from "./sections/Testimonials";
 import Footer from "./sections/Footer";
 import Contact from "./sections/Contact";
@@ -6,24 +8,30 @@ import Experience from "./sections/Experience";
 import Hero from "./sections/Hero";
 import Stats from "./sections/Stats";
 import Project from "./sections/Project";
-import LogoShowcase from "./sections/LogoShowcase";
-import FeatureCards from "./sections/FeatureCards";
 import Navbar from "./components/NavBar";
+import ResumeModal from "./components/ResumeModel";
 
-const App = () => (
-  <>
-    <Navbar />
-    <Hero />
-    <Stats />
-    <Project />
-    {/* <LogoShowcase /> */}
-    {/* <FeatureCards /> */}
-    <Experience />
-    <TechStack />
-    {/* <Testimonials /> */}
-    <Contact />
-    <Footer />
-  </>
-);
+const App = () => {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
+  return (
+    <>
+      <Navbar openResume={() => setIsResumeOpen(true)} />
+      <Hero openResume={() => setIsResumeOpen(true)} />
+
+      <Stats />
+      <Project />
+      <Experience />
+      <TechStack />
+      <Contact />
+      <Footer />
+
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
+    </>
+  );
+};
 
 export default App;
