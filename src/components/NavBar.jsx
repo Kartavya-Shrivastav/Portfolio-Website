@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { navLinks } from "../constants";
 
-const NavBar = () => {
+const NavBar = ({ openResume }) => {
   // track if the user has scrolled down the page
   const [scrolled, setScrolled] = useState(false);
 
@@ -41,13 +41,21 @@ const NavBar = () => {
             ))}
           </ul>
         </nav>
+          
+        <div className="flex items-center gap-3">
+          <button onClick={openResume} className="resume-btn group">
+            <div className="inner">
+              <span>Resume</span>
+            </div>
+          </button>
+                  
+          <a href="#contact" className="contact-btn group">
+            <div className="inner">
+              <span>Contact me</span>
+            </div>
+          </a>
+        </div>
 
-        
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact me</span>
-          </div>
-        </a>
       </div>
     </header>
   );

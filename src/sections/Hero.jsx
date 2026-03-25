@@ -8,7 +8,7 @@ import HeroExperience from "../components/models/hero_models/HeroExperience";
 import { useRef, useState, useEffect } from "react";
 import LeetcodeCard from "../components/LeetcodeCard";
 
-const Hero = () => {
+const Hero = ({ openResume }) => {
   useGSAP(() => {
     gsap.fromTo(
       ".hero-text h1",
@@ -73,11 +73,20 @@ const Hero = () => {
               people actually enjoy using.
             </p>
 
-            <Button
-              text="See My Work"
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="work"
-            />
+            <div className="flex gap-4">
+              <Button
+                text="See My Work"
+                className="md:w-80 md:h-16 w-60 h-12"
+                id="work"
+              />
+
+              <button
+                onClick={openResume}
+                className="md:w-60 md:h-16 w-44 h-12 border border-white/20 rounded-lg hover:bg-white/10 transition"
+              >
+                Resume
+              </button>
+            </div>
 
               
           </div>

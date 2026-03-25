@@ -18,8 +18,10 @@
     "@tailwindcss/vite": "^4.0.14",
     "@types/three": "^0.174.0",
     "gsap": "^3.12.7",
+    "pdfjs-dist": "^5.4.296",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-pdf": "^10.4.1",
     "react-responsive": "^10.0.1",
     "tailwindcss": "^4.0.14",
     "three": "^0.174.0"
