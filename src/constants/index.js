@@ -72,24 +72,6 @@ const logoIconsList = [
   },
 ];
 
-const abilities = [
-  {
-    imgPath: "/images/seo.png",
-    title: "Quality Focus",
-    desc: "Delivering high-quality results while maintaining attention to every detail.",
-  },
-  {
-    imgPath: "/images/chat.png",
-    title: "Reliable Communication",
-    desc: "Keeping you updated at every step to ensure transparency and clarity.",
-  },
-  {
-    imgPath: "/images/time.png",
-    title: "On-Time Delivery",
-    desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
-  },
-];
-
 const techStackImgs = [
   {
     name: "React Developer",
@@ -150,7 +132,7 @@ const timelineData = [
   {
     title: "Matriculation",
     date: "March 2020",
-    logo: "/images/demo-school.png",
+    logo: "/images/vbs.jpg",
     points: [
       "Completed matriculation with 91%.",
       "Built strong academic foundation in core subjects.",
@@ -160,7 +142,7 @@ const timelineData = [
   {
     title: "Intermediate",
     date: "May 2022",
-    logo: "/images/demo-school.png",
+    logo: "/images/vbs.jpg",
     points: [
       "Completed intermediate with 92.6%.",
       "Strengthened mathematics and science fundamentals.",
@@ -170,7 +152,7 @@ const timelineData = [
   {
     title: "B.Tech (Computer Science)",
     date: "Aug 2023 ",
-    logo: "/images/demo-college.png",
+    logo: "/images/lpu.png",
     points: [
       "Current CGPA: 8.92.",
       "Working on real-world web projects and DSA.",
@@ -180,7 +162,7 @@ const timelineData = [
   {
     title: "Internship – Uninxt Study Overseas",
     date: "Jan 2025 – Apr 2025",
-    logo: "/images/demo-company.png",
+    logo: "/images/uninxt.png",
     points: [
       "Revamped UI and improved performance.",
       "Implemented responsive and dynamic features.",
@@ -265,7 +247,6 @@ const socialImgs = [
 
 export {
   words,
-  abilities,
   logoIconsList,
   counterItems,
   timelineData,
