@@ -8,7 +8,7 @@ const Stats = () => {
   const [activeCard, setActiveCard] = useState(null);
 
   return (
-    <section className="section-padding mt-5">
+    <section className="section-padding">
       <div className="max-w-7xl mx-auto">
 
         <div className="mb-12 flex items-center gap-4">

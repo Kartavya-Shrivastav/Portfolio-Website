@@ -474,7 +474,7 @@ const ProfileCardComponent = ({
             {/* <div style={shineStyle} /> */}
 
             {/* Glare layer */}
-            {/* <div style={glareStyle} /> */}
+            <div style={glareStyle} />
 
             {/* Avatar content */}
             <div
