@@ -17,7 +17,7 @@ const About = () => {
         >
             {/* Pixel Background */}
             <div className="absolute inset-0 flex justify-center items-center">
-                <div className="scale-150 md:scale-130 opacity-100">
+                <div className="scale-150 md:scale-150 opacity-110">
                     <PixelCard variant="pink" isActive={active} />
                 </div>
             </div>

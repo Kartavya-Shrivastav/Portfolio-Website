@@ -101,7 +101,7 @@ const Experience = () => {
         <div className="mt-16 relative">
 
   {/* CENTER LINE */}
-  <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-white/10">
+  <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[6px] h-full bg-white/10">
     <div className="timeline gradient-line w-full absolute top-0 left-1/2 -translate-x-1/2 h-[110%]" />
   </div>
 
