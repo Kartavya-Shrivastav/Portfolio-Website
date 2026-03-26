@@ -10,6 +10,7 @@ import Stats from "./sections/Stats";
 import Project from "./sections/Project";
 import Navbar from "./components/NavBar";
 import ResumeModal from "./components/ResumeModel";
+import About from "./sections/About";
 
 const App = () => {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -18,7 +19,7 @@ const App = () => {
     <>
       <Navbar openResume={() => setIsResumeOpen(true)} />
       <Hero openResume={() => setIsResumeOpen(true)} />
-
+      <About />
       <Stats />
       <Project />
       <Experience />
