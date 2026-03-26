@@ -34,7 +34,7 @@ const Hero = ({ openResume }) => {
   }, []);
 
   return (
-    <section ref={ref} id="hero" className="relative">
+    <section ref={ref} id="hero" className="relative pb-5 md:pb-10">
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="" />
       </div>

@@ -24,6 +24,7 @@ const Cleanup = () => {
 const HeroExperience = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+  const isLarge = useMediaQuery({ query: "(min-width: 1400px)" });
 
   return (
       <Canvas 
@@ -49,10 +50,14 @@ const HeroExperience = () => {
           <HeroLights />
           <Particles count={180} />
           <group
-            scale={isMobile ? 0.8 : 1.2}
-            position={[0, -3.5, 0]}
-            rotation={[0, -Math.PI / 4, 0]}
-          >
+  scale={
+    isMobile ? 0.75 : 
+    isTablet ? 0.9 : 
+    isLarge ? 1.0 : 1.1
+  }
+  position={[0, -3.5, 0]}
+  rotation={[0, -Math.PI / 4, 0]}
+>
             <Room />
           </group>
         </Suspense>
