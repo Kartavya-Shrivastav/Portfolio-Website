@@ -121,7 +121,9 @@ const VARIANTS = {
   }
 };
 
-export default function PixelCard({ variant = 'default', gap, speed, colors, noFocus, className = '', children }) {
+
+
+export default function PixelCard({variant = 'default', isActive, gap, speed, colors, noFocus, className = '', children }) {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
   const pixelsRef = useRef([]);
@@ -134,6 +136,18 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
   const finalSpeed = speed ?? variantCfg.speed;
   const finalColors = colors ?? variantCfg.colors;
   const finalNoFocus = noFocus ?? variantCfg.noFocus;
+
+  useEffect(() => {
+    if (isActive === undefined) return;
+
+    if (isActive) {
+        handleAnimation('appear');
+    } else {
+        handleAnimation('disappear');
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isActive]);
 
   const initPixels = () => {
     if (!containerRef.current || !canvasRef.current) return;
@@ -227,8 +241,8 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
     <div
       ref={containerRef}
       className={`h-[400px] w-[300px] relative overflow-hidden grid place-items-center aspect-[4/5] border border-[#27272a] rounded-[25px] isolate transition-colors duration-200 ease-[cubic-bezier(0.5,1,0.89,1)] select-none ${className}`}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      onMouseEnter={isActive === undefined ? onMouseEnter : undefined}
+      onMouseLeave={isActive === undefined ? onMouseLeave : undefined}
       onFocus={finalNoFocus ? undefined : onFocus}
       onBlur={finalNoFocus ? undefined : onBlur}
       tabIndex={finalNoFocus ? -1 : 0}

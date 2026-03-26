@@ -1,18 +1,23 @@
 import ProfileCard from "../components/models/about/ProfileCard";
 import PixelCard from "../components/models/about/PixelCard";
+import { useState } from "react";
 
 const About = () => {
+  const [active, setActive] = useState(false);
+
   return (
     <section className="section-padding overflow-visible">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         {/* LEFT SIDE - Profile Card ONLY */}
-        <div className="flex justify-center items-center relative">
-
+        <div className="flex justify-center items-center relative"
+            onMouseEnter={() => setActive(true)}
+            onMouseLeave={() => setActive(false)}
+        >
             {/* Pixel Background */}
             <div className="absolute inset-0 flex justify-center items-center">
                 <div className="scale-150 md:scale-125 opacity-100">
-                    <PixelCard variant="pink" />
+                    <PixelCard variant="pink" isActive={active} />
                 </div>
             </div>
 
