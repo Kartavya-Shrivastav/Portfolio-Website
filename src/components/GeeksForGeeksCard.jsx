@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const GeeksForGeeksCard = ({active, setActive, clearActive, expanded }) => {
+const GeeksForGeeksCard = ({setActive, clearActive, expanded }) => {
   const [count, setCount] = useState(0);
 
   // 🔥 Replace with your actual stats
