@@ -1,12 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
 import { words } from "../constants";
 import HeroExperience from "../components/models/hero_models/HeroExperience";
 import { useRef, useState, useEffect } from "react";
-import LeetcodeCard from "../components/LeetcodeCard";
 
 const Hero = ({ openResume }) => {
   useGSAP(() => {
@@ -34,14 +32,14 @@ const Hero = ({ openResume }) => {
   }, []);
 
   return (
-    <section ref={ref} id="hero" className="relative pb-5 md:pb-10">
+    <section ref={ref} id="hero" className="relative pb-5 md:pb-10 overflow-x-hidden">
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="" />
       </div>
 
       <div className="hero-layout">
         {/* LEFT: Hero Content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+        <header className="flex flex-col justify-center w-full md:px-20 px-5">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
@@ -94,7 +92,7 @@ const Hero = ({ openResume }) => {
 
         {/* RIGHT: 3D Model or Visual */}
         <figure className="z-0">
-          <div className="hero-3d-layout pointer-events-none">
+          <div className="hero-3d-layout pointer-events-none ">
             {visible && <HeroExperience />}
           </div>
         </figure>

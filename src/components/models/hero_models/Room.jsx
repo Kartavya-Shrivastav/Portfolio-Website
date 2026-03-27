@@ -52,7 +52,7 @@ export function Room(props) {
   });
 
   return (
-    <group {...props}>
+    <group {...props} scale={[0.8, 1, 1]}>
       <EffectComposer>
         <SelectiveBloom
           selection={screensRef}

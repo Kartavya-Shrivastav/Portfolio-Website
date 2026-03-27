@@ -28,9 +28,10 @@ const HeroExperience = () => {
 
   return (
       <Canvas 
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "100%"}}
+        dpr={[1, 1.5]}
         frameloop="demand"
-        camera={{ position: [0, 0, 15], fov: 45 }}>
+        camera={{ position: [0, 0, 18], fov: 45 }}>
         
         <Cleanup />
 
@@ -50,14 +51,14 @@ const HeroExperience = () => {
           <HeroLights />
           <Particles count={180} />
           <group
-  scale={
-    isMobile ? 0.75 : 
-    isTablet ? 0.9 : 
-    isLarge ? 1.0 : 1.1
-  }
-  position={[0, -3.5, 0]}
-  rotation={[0, -Math.PI / 4, 0]}
->
+            scale={
+              isMobile ? 0.75 : 
+              isTablet ? 0.9 : 
+              isLarge ? 1.25 : 1.5
+            }
+            position={[0, -3.5, 0]}
+            rotation={[0, -Math.PI / 4, 0]}
+          >
             <Room />
           </group>
         </Suspense>
