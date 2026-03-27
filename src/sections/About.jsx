@@ -90,9 +90,9 @@ const About = () => {
 
             {/* Tags */}
             <div className="flex flex-wrap gap-3 mt-6">
-              <span className="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Frontend</span>
-              <span className="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">DSA</span>
-              <span className="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Animations</span>
+              <div className="text-xs text-white/40 mb-3 italic animate-pulse">
+                Hint: Click on the text 👆
+              </div>
             </div>
 
           </div>
