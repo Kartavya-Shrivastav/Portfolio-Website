@@ -122,7 +122,7 @@ const Project = () => {
 
             <div ref={ycDirectoryRef} className="min-h-[310px]">
               <ProjectCard
-                video="/videos/project3.mp4"
+                image="/images/project1.png"
                 title="YC Directory App"
                 description="Startup discovery platform inspired by Y Combinator."
                 liveLink="https://your-live-link.com"

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const ProjectCard = ({ video, title, description, liveLink, repoLink, className = ""}) => {
+const ProjectCard = ({ video, image, title, description, liveLink, repoLink, className = ""}) => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   // ESC key support
@@ -26,14 +26,22 @@ const ProjectCard = ({ video, title, description, liveLink, repoLink, className 
       <div className="absolute inset-0">
 
   {/* 🔥 Blurred Background Fill */}
+  {video ? (
   <video
     src={video}
     autoPlay
     loop
     muted
     playsInline
-    className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-40"
+    className="w-full h-full object-cover"
   />
+) : (
+  <img
+    src={image}
+    alt={title}
+    className="w-full h-full object-cover"
+  />
+)}
 
   {/* ✅ Main Video (no crop) */}
   <video
