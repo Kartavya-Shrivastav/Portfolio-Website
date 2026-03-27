@@ -127,50 +127,43 @@ const techStackIcons = [
     rotation: [0, -Math.PI / 4, 0],
   },
 ];
-
 const timelineData = [
   {
+    type: "education",
     title: "Matriculation",
     date: "March 2020",
+    institute: "Vidya Bharti School",
+    score: "91%",
     logo: "/images/vbs.jpg",
-    points: [
-      "Completed matriculation with 91%.",
-      "Built strong academic foundation in core subjects.",
-      "Developed early analytical and problem-solving skills."
-    ],
   },
   {
+    type: "education",
     title: "Intermediate",
     date: "May 2022",
+    institute: "Vidya Bharti School",
+    score: "92.6%",
     logo: "/images/vbs.jpg",
-    points: [
-      "Completed intermediate with 92.6%.",
-      "Strengthened mathematics and science fundamentals.",
-      "Built discipline and consistency in studies."
-    ],
   },
   {
+    type: "education",
     title: "B.Tech (Computer Science)",
-    date: "Aug 2023 ",
+    date: "Aug 2023",
+    institute: "Lovely Professional University",
+    score: "CGPA: 8.92",
     logo: "/images/lpu.png",
-    points: [
-      "Current CGPA: 8.92.",
-      "Working on real-world web projects and DSA.",
-      "Exploring full-stack and interactive web development."
-    ],
   },
   {
+    type: "work",
     title: "Internship – Uninxt Study Overseas",
     date: "Jan 2025 – Apr 2025",
     logo: "/images/uninxt.png",
     points: [
       "Revamped UI and improved performance.",
       "Implemented responsive and dynamic features.",
-      "Worked on authentication and SEO improvements."
+      "Worked on authentication and SEO improvements.",
     ],
   },
 ];
-
 const expLogos = [
   {
     name: "logo1",

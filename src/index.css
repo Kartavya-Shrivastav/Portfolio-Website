@@ -394,6 +394,11 @@ section {
   }
 }
 
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(39, 134, 134, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0,255,255,0.6); }
+}
+
 /* Hero Text slider ends */
 
 .gradient-line {

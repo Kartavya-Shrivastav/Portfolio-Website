@@ -9,149 +9,125 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
   useGSAP(() => {
-    // Loop through each timeline card and animate them in
-    // as the user scrolls to each card
-    gsap.utils.toArray(".timeline-card").forEach((card) => {
-      // Animate the card coming in from the left
-      // and fade in
-      gsap.from(card, {
-        // Move the card in from the left
-        xPercent: -100,
-        // Make the card invisible at the start
-        opacity: 0,
-        // Set the origin of the animation to the left side of the card
-        transformOrigin: "left left",
-        // Animate over 1 second
-        duration: 1,
-        // Use a power2 ease-in-out curve
-        ease: "power2.inOut",
-        // Trigger the animation when the card is 80% of the way down the screen
-        scrollTrigger: {
-          // The card is the trigger element
-          trigger: card,
-          // Trigger the animation when the card is 80% down the screen
-          start: "top 80%",
-        },
-      });
-    });
-
-    // Animate the timeline height as the user scrolls
-    // from the top of the timeline to 70% down the screen
-    // The timeline height should scale down from 1 to 0
-    // as the user scrolls up the screen
-    gsap.to(".timeline", {
-      // Set the origin of the animation to the bottom of the timeline
-      transformOrigin: "top bottom",
-      // Animate the timeline height over 1 second
-      ease: "power1.inOut",
-      // Trigger the animation when the timeline is at the top of the screen
-      // and end it when the timeline is at 70% down the screen
+  gsap.fromTo(
+    ".timeline-line",
+    { width: "0%" },
+    {
+      width: "100%",
+      ease: "none",
       scrollTrigger: {
-        trigger: ".timeline",
-        start: "top 80%",
+        trigger: "#experience",
+        start: "top 70%",
         end: "bottom 60%",
-        // Update the animation as the user scrolls
-        onUpdate: (self) => {
-          // Scale the timeline height as the user scrolls
-          // from 1 to 0 as the user scrolls up the screen
-          gsap.to(".timeline", {
-            scaleY: self.progress,
-          });
-        },
+        scrub: true,
+      },
+    }
+  );
+
+  // Cards animation
+  gsap.utils.toArray(".timeline-item").forEach((item, i) => {
+    gsap.from(item, {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      delay: i * 0.1,
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
       },
     });
-
-    // Loop through each expText element and animate them in
-    // as the user scrolls to each text element
-    gsap.utils.toArray(".expText").forEach((text) => {
-      // Animate the text opacity from 0 to 1
-      // and move it from the left to its final position
-      // over 1 second with a power2 ease-in-out curve
-      gsap.from(text, {
-        // Set the opacity of the text to 0
-        opacity: 0,
-        // Move the text from the left to its final position
-        // (xPercent: 0 means the text is at its final position)
-        xPercent: 0,
-        // Animate over 1 second
-        duration: 1,
-        // Use a power2 ease-in-out curve
-        ease: "power2.inOut",
-        // Trigger the animation when the text is 60% down the screen
-        scrollTrigger: {
-          // The text is the trigger element
-          trigger: text,
-          // Trigger the animation when the text is 60% down the screen
-          start: "top 60%",
-        },
-      });
-    }, "<"); // position parameter - insert at the start of the animation
-  }, []);
+  });
+}, []);
 
   return (
     <section
       id="experience"
-      className="flex-center md:mt-24 mt-12 section-padding xl:px-0"
+      className="flex-center md:mt-8 mt-8 section-padding xl:px-0"
     >
       <div className="w-full h-full md:px-20 px-5">
         <TitleHeader
-          title="Professional Work Experience"
+          title="TIMELINE"
           sub="💼 My Career Overview"
         />
-        <div className="mt-16 relative">
+        
+        <div className=" relative">
 
-  {/* CENTER LINE */}
-  <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[6px] h-full bg-white/10">
-    <div className="timeline gradient-line w-full absolute top-0 left-1/2 -translate-x-1/2 h-[110%]" />
-  </div>
-
-  <div className="flex flex-col gap-5 md:gap-6">
-    {timelineData.map((card, index) => {
-      const isLeft = index % 2 === 0;
-
-      return (
-        <div
-          key={card.title}
-          className={`timeline-card flex items-center w-full ${
-            isLeft ? "justify-start" : "justify-end"
-          }`}
-        >
-          {/* CONTENT BOX */}
-          <div
-            className={`expText w-[45%] ${
-              isLeft ? "text-right pr-10" : "text-left pl-10"
-            }`}
-          >
-            <h2 className="text-xl md:text-2xl font-semibold">
-              {card.title}
-            </h2>
-
-            <p className="text-sm text-white-50 mt-1">
-              🗓️ {card.date}
-            </p>
-
-            <ul className="mt-2 text-sm text-white-50 space-y-1.5">
-              {card.points.map((point, i) => (
-                <li key={i}>• {point}</li>
-              ))}
-            </ul>
+          {/* LINE */}
+          <div className="absolute top-1/2 left-1/2 w-[85%] -translate-x-1/2 h-[3px] bg-white/10 -translate-y-1/2">
+            <div className="timeline-line h-full w-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500" />
           </div>
 
-          {/* CENTER DOT + LOGO */}
-          <div className="absolute left-1/2 -translate-x-1/2 z-20">
-            <div className="w-12 h-12 rounded-full bg-black border border-white/20 flex items-center justify-center">
-              <img
-                src={card.logo}
-                alt="logo"
-                className="w-11 h-11 rounded-full border-2 border-white/10 object-contain"
-              />
-            </div>
-          </div>
+          {/* CARDS */}
+          <div className="flex justify-center gap-15 items-start md:gap-20 py-24">
+
+            {timelineData.map((card, index) => {
+
+              return (
+                <div
+                  key={index}
+                  className="timeline-item relative flex flex-col items-center w-full max-w-[220px] md:max-w-[240px] h-[260px]"
+                >
+
+                {/* CARD */}
+                <div
+  className={`absolute top-1/2 left-1/2 -translate-x-1/2
+  ${card.type === "education" ? "w-[180px]" : "w-[260px]"}
+  translate-y-[70px]`}
+>
+                  <div
+  className={`bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md 
+  border border-white/10 rounded-xl 
+  ${card.type === "education" ? "p-4 text-center" : "p-5 text-left"}
+  transition-all duration-500 hover:scale-105 hover:border-white/20`}
+>
+
+                    <h3 className="text-sm md:text-base font-semibold">
+  {card.title}
+</h3>
+
+<p className="text-xs text-blue-300 mb-1">
+  {card.date}
+</p>
+
+{card.type === "education" ? (
+  <>
+    <p className="text-xs text-white-50">{card.institute}</p>
+    <p className="text-cyan-400 text-sm font-semibold mt-1">
+      {card.score}
+    </p>
+  </>
+) : (
+  <ul className="text-xs text-white-50 space-y-1 mt-2 leading-relaxed">
+    {card.points.map((p, i) => (
+      <li key={i}>• {p}</li>
+    ))}
+  </ul>
+)}
+                  </div>
+                </div>
+
+                {/* CONNECTOR LINE */}
+                <div
+  className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[2px] h-[40px] bg-white/20 translate-y-[20px]"
+/>
+
+                {/* LOGO (ON TIMELINE) */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                                w-14 h-14 rounded-full bg-black border border-white/20 
+                                flex items-center justify-center z-10
+                                shadow-[0_0_20px_rgba(0,255,255,0.4)]">
+                        <img
+                          src={card.logo}
+                          className="w-12 h-12 rounded-full object-contain"
+                        />
+                </div>
+
+                </div>
+            );
+          })}
         </div>
-      );
-    })}
-  </div>
-</div>
+      </div>
+
       </div>
     </section>
   );
